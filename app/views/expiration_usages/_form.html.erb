@@ -1,0 +1,22 @@
+<%= form_with(model: expiration_usage, local: true) do |form| %>
+  <% if expiration_usage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expiration_usage.errors.count, "error") %> prohibited this expiration_usage from being saved:</h2>
+
+      <ul>
+      <% expiration_usage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :usage %>
+    <%= form.number_field :usage %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

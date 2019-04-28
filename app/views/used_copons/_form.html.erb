@@ -1,0 +1,17 @@
+<%= form_with(model: used_copon, local: true) do |form| %>
+  <% if used_copon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(used_copon.errors.count, "error") %> prohibited this used_copon from being saved:</h2>
+
+      <ul>
+      <% used_copon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

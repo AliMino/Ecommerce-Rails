@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expiration Usages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expiration_usages.each do |expiration_usage| %>
+      <tr>
+        <td><%= expiration_usage.usage %></td>
+        <td><%= link_to 'Show', expiration_usage %></td>
+        <td><%= link_to 'Edit', edit_expiration_usage_path(expiration_usage) %></td>
+        <td><%= link_to 'Destroy', expiration_usage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expiration Usage', new_expiration_usage_path %>

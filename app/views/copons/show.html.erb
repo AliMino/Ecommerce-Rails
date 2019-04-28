@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Has fixed amount:</strong>
+  <%= @copon.has_fixed_amount %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @copon.discount %>
+</p>
+
+<p>
+  <strong>Expiration type:</strong>
+  <%= @copon.expiration_type %>
+</p>
+
+<%= link_to 'Edit', edit_copon_path(@copon) %> |
+<%= link_to 'Back', copons_path %>

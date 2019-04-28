@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  has_fixed_amount: false
+  discount: 1
+  expiration_type: 1
+
+two:
+  has_fixed_amount: false
+  discount: 1
+  expiration_type: 1

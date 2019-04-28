@@ -1,0 +1,2 @@
+class Copon < ApplicationRecord
+end
