@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "home#index"
+  root to: "products#index"
   resources :expiration_usages
   resources :expiration_dates
   resources :ratings
