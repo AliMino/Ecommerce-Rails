@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: "home#index"
   resources :expiration_usages
   resources :expiration_dates
   resources :ratings
