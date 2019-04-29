@@ -6,6 +6,33 @@ class User < ApplicationRecord
   validate :validate_avatar
 
   has_one_attached :avatar
+  enum role: { admin: 2, seller: 1, buyer: 0 }
+
+
+  def self.assign_role(user, role)
+    user.role = role
+    user.save
+  end
+
+  def self.get_all_buyers
+    buyers = []
+    User.all.each do |user|
+      if user.role == "buyer"
+        buyers.append user
+      end
+    end
+    buyers
+  end
+
+  def self.get_all_sellers
+    sellers = []
+    User.all.each do |user|
+      if user.role == "seller"
+        sellers.append user
+      end
+    end
+    sellers
+  end
 
   private
 
