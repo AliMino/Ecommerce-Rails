@@ -68,3 +68,5 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'resque', '~> 2.0'
 gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 gem 'chartjs-ror', '~> 3.6', '>= 3.6.4'
+
+gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
