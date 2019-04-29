@@ -4,6 +4,14 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :avatar %>
+    <% if resource.avatar.attached? %>
+      <%= image_tag resource.avatar, width: '100px', class: 'rounded' %>
+    <% end %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, autocomplete: "username", autofocus: true %>
   </div>
