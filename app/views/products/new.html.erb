@@ -1,3 +1,6 @@
+<% if current_user %>
+  <% User.assign_role(current_user, 'seller') %>
+<% end %>
 <h1>New Product</h1>
 
 <%= render 'form', product: @product %>
