@@ -69,6 +69,7 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
+      params[:brand][:name] = params[:brand][:name].capitalize
       params.require(:brand).permit(:name)
     end
 end
