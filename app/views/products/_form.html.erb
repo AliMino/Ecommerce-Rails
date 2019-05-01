@@ -12,6 +12,30 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :brand %>
+    <%= form.select(:brand) do %>
+      <% brands_array = Brand.all.collect { |b| [b.name, b.id] } %>
+      <% if product && product.brand %>
+        <%= options_for_select(brands_array, :selected => product.brand.id) %>
+      <% else %>
+        <%= options_for_select(brands_array) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select(:category) do %>
+      <% categories_array = Category.all.collect { |c| [c.name, c.id] } %>
+      <% if product && product.category %>
+        <%= options_for_select(categories_array, :selected => product.category.id) %>
+      <% else %>
+        <%= options_for_select(categories_array) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
