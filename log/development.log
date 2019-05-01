@@ -8001,3 +8001,2140 @@ Unpermitted parameters: :brand, :category
 Completed 200 OK in 117ms (Views: 105.2ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/" for ::1 at 2019-05-01 17:38:35 +0200
+  
+Mysql2::Error::ConnectionError (Access denied for user 'compiler'@'localhost' (using password: NO)):
+  
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `connect'
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `initialize'
+activerecord (5.2.3) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `new'
+activerecord (5.2.3) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `mysql2_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:1014:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.3) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (19.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT GET_LOCK('495222145204032225', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to AddBrandToProducts (20190501042013)
+  [1m[35m (826.7ms)[0m  [1m[35mALTER TABLE `products` ADD `brand_id` bigint[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (258.4ms)[0m  [1m[35mCREATE  INDEX `index_products_on_brand_id`  ON `products` (`brand_id`) [0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (715.6ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_f3b4d49caa`
+FOREIGN KEY (`brand_id`)
+  REFERENCES `brands` (`id`)
+[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (15.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042013')[0m
+  ↳ bin/rails:4
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddCategoryToProducts (20190501042124)
+  [1m[35m (578.5ms)[0m  [1m[35mALTER TABLE `products` ADD `category_id` bigint[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (244.3ms)[0m  [1m[35mCREATE  INDEX `index_products_on_category_id`  ON `products` (`category_id`) [0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (760.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_fb915499a4`
+FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042124')[0m
+  ↳ bin/rails:4
+  [1m[35m (61.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSellerToProducts (20190501042145)
+  [1m[35m (579.6ms)[0m  [1m[35mALTER TABLE `products` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (212.2ms)[0m  [1m[35mCREATE  INDEX `index_products_on_user_id`  ON `products` (`user_id`) [0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (837.1ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_dee2631783`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042145')[0m
+  ↳ bin/rails:4
+  [1m[35m (61.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (59.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('495222145204032225')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2019-05-01 17:41:26 +0200
+  [1m[35m (16.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 10935ms (Views: 10869.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 17:41:51 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (496.1ms)
+Completed 200 OK in 636ms (Views: 574.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 17:41:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin" for ::1 at 2019-05-01 17:41:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin" for ::1 at 2019-05-01 17:53:49 +0200
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-01 18:02:42 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (6.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('495222145204032225', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateAdminUsers (20190501160146)
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('495222145204032225')[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2019-05-01 18:03:09 +0200
+  [1m[35m (7.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (14.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (235.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (353.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('495222145204032225', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateStores (20190428131620)
+  [1m[35m (277.8ms)[0m  [1m[35mCREATE TABLE `stores` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `summary` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131620_create_stores.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131620')[0m
+  ↳ bin/rails:4
+  [1m[35m (44.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateShoppingCarts (20190428131621)
+  [1m[35m (311.6ms)[0m  [1m[35mCREATE TABLE `shopping_carts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131621_create_shopping_carts.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131621')[0m
+  ↳ bin/rails:4
+  [1m[35m (150.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateOrders (20190428131622)
+  [1m[35m (307.5ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131622_create_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131622')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateOrderStates (20190428131623)
+  [1m[35m (333.3ms)[0m  [1m[35mCREATE TABLE `order_states` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131623_create_order_states.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131623')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateWishLists (20190428131624)
+  [1m[35m (335.0ms)[0m  [1m[35mCREATE TABLE `wish_lists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131624_create_wish_lists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131624')[0m
+  ↳ bin/rails:4
+  [1m[35m (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCopons (20190428131625)
+  [1m[35m (289.8ms)[0m  [1m[35mCREATE TABLE `copons` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `has_fixed_amount` tinyint(1), `discount` int, `expiration_type` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131625_create_copons.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131625')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateUsedCopons (20190428131626)
+  [1m[35m (256.1ms)[0m  [1m[35mCREATE TABLE `used_copons` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131626_create_used_copons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131626')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateProducts (20190428131628)
+  [1m[35m (335.1ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `price` float(24), `quantity` int, `title` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131628_create_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131628')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateProductImages (20190428131629)
+  [1m[35m (234.0ms)[0m  [1m[35mCREATE TABLE `product_images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131629_create_product_images.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131629')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateBrands (20190428131630)
+  [1m[35m (255.9ms)[0m  [1m[35mCREATE TABLE `brands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131630_create_brands.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131630')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCategories (20190428131631)
+  [1m[35m (289.4ms)[0m  [1m[35mCREATE TABLE `categories` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131631_create_categories.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131631')[0m
+  ↳ bin/rails:4
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateReviews (20190428131632)
+  [1m[35m (279.7ms)[0m  [1m[35mCREATE TABLE `reviews` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `comment` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131632_create_reviews.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131632')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateRatings (20190428131634)
+  [1m[35m (256.0ms)[0m  [1m[35mCREATE TABLE `ratings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `rate` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131634_create_ratings.rb:3
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131634')[0m
+  ↳ bin/rails:4
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateExpirationDates (20190428131635)
+  [1m[35m (256.4ms)[0m  [1m[35mCREATE TABLE `expiration_dates` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131635_create_expiration_dates.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131635')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateExpirationUsages (20190428131636)
+  [1m[35m (312.1ms)[0m  [1m[35mCREATE TABLE `expiration_usages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `usage` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131636_create_expiration_usages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131636')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateUsers (20190428162950)
+  [1m[35m (334.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:5
+  [1m[35m (208.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:39
+  [1m[35m (244.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428162950')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddNameToUser (20190428165903)
+  [1m[35m (612.7ms)[0m  [1m[35mALTER TABLE `users` ADD `name` varchar(255)[0m
+  ↳ db/migrate/20190428165903_add_name_to_user.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428165903')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveStorageTables (20190429110333)
+  [1m[35m (323.3ms)[0m  [1m[35mCREATE TABLE `active_storage_blobs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `key` varchar(255) NOT NULL, `filename` varchar(255) NOT NULL, `content_type` varchar(255), `metadata` text, `byte_size` bigint NOT NULL, `checksum` varchar(255) NOT NULL, `created_at` datetime NOT NULL, UNIQUE INDEX `index_active_storage_blobs_on_key`  (`key`))[0m
+  ↳ db/migrate/20190429110333_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (445.5ms)[0m  [1m[35mCREATE TABLE `active_storage_attachments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `record_type` varchar(255) NOT NULL, `record_id` bigint NOT NULL, `blob_id` bigint NOT NULL, `created_at` datetime NOT NULL,  INDEX `index_active_storage_attachments_on_blob_id`  (`blob_id`), UNIQUE INDEX `index_active_storage_attachments_uniqueness`  (`record_type`, `record_id`, `name`, `blob_id`), CONSTRAINT `fk_rails_c3b3935057`
+FOREIGN KEY (`blob_id`)
+  REFERENCES `active_storage_blobs` (`id`)
+)[0m
+  ↳ db/migrate/20190429110333_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190429110333')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddRoleToUser (20190429170315)
+  [1m[35m (514.4ms)[0m  [1m[35mALTER TABLE `users` ADD `role` int DEFAULT 0[0m
+  ↳ db/migrate/20190429170315_add_role_to_user.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190429170315')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddBrandToProducts (20190501042013)
+  [1m[35m (512.7ms)[0m  [1m[35mALTER TABLE `products` ADD `brand_id` bigint[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (300.0ms)[0m  [1m[35mCREATE  INDEX `index_products_on_brand_id`  ON `products` (`brand_id`) [0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (693.7ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_f3b4d49caa`
+FOREIGN KEY (`brand_id`)
+  REFERENCES `brands` (`id`)
+[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042013')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddCategoryToProducts (20190501042124)
+  [1m[35m (679.5ms)[0m  [1m[35mALTER TABLE `products` ADD `category_id` bigint[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (222.1ms)[0m  [1m[35mCREATE  INDEX `index_products_on_category_id`  ON `products` (`category_id`) [0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (1703.0ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_fb915499a4`
+FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042124')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSellerToProducts (20190501042145)
+  [1m[35m (526.0ms)[0m  [1m[35mALTER TABLE `products` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (310.7ms)[0m  [1m[35mCREATE  INDEX `index_products_on_user_id`  ON `products` (`user_id`) [0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (971.8ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_dee2631783`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042145')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateAdminUsers (20190501160146)
+  [1m[35m (300.3ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:5
+  [1m[35m (241.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_email`  ON `admin_users` (`email`) [0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:39
+  [1m[35m (310.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token`  ON `admin_users` (`reset_password_token`) [0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501160146')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveAdminComments (20190501160148)
+  [1m[35m (344.9ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`),  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`))[0m
+  ↳ db/migrate/20190501160148_create_active_admin_comments.rb:3
+  [1m[35m (296.7ms)[0m  [1m[35mCREATE  INDEX `index_active_admin_comments_on_namespace`  ON `active_admin_comments` (`namespace`) [0m
+  ↳ db/migrate/20190501160148_create_active_admin_comments.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501160148')[0m
+  ↳ bin/rails:4
+  [1m[35m (76.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-05-01 16:15:14', '2019-05-01 16:15:14')[0m
+  ↳ bin/rails:4
+  [1m[35m (51.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('495222145204032225')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for ::1 at 2019-05-01 18:15:32 +0200
+  [1m[35m (26.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 12462ms (Views: 12440.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:15:52 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:15:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 241ms (Views: 216.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-05-01 18:15:55 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrLyUJ04KJS1taE8VLqRchVAF0bFt95TKc7Ulp18m6sX5gARK/O4UkAbCc+yQB1CcezmqDgibjkZgbo9+chUNA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@example.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 144ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrLyUJ04KJS1taE8VLqRchVAF0bFt95TKc7Ulp18m6sX5gARK/O4UkAbCc+yQB1CcezmqDgibjkZgbo9+chUNA==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 522ms (Views: 257.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (10.4ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Create (0.3ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('admin@example.com', '$2a$11$rBUoZ..fg.34eyRC9K6Hb.ZU9DwAystNs5kbiLDSgLrAbHF69f3Ym', '2019-05-01 16:16:35', '2019-05-01 16:16:35')[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (34.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (5.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:8
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:16:53 +0200
+  [1m[35m (24.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 995ms (Views: 969.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:16:58 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 440ms (Views: 411.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:17:02 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:17:02 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 317ms (Views: 315.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-05-01 18:17:04 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kbD/KZHV7E1/hNxmvLhF1BNlUbWfcIRx/t41pEwYX1II5A1oJx58i4oqdJVaQsnkd8mgW2LlNBvOkVsPKKyQzQ==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@example.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 1.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kbD/KZHV7E1/hNxmvLhF1BNlUbWfcIRx/t41pEwYX1II5A1oJx58i4oqdJVaQsnkd8mgW2LlNBvOkVsPKKyQzQ==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 414ms (Views: 236.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:17:12 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:17:12 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 247ms (Views: 245.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:37:45 +0200
+  [1m[35m (41.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 1737ms (Views: 1722.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:39:02 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:39:02 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (175.5ms)
+Completed 200 OK in 536ms (Views: 486.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:39:06 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/signin" for ::1 at 2019-05-01 18:39:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/admin/signin"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/login" for ::1 at 2019-05-01 18:39:58 +0200
+  [1m[35m (19.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (5.7ms)
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (166.5ms)
+Completed 200 OK in 1126ms (Views: 1088.6ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/admin/login" for ::1 at 2019-05-01 18:40:04 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Zk+EdBmGG+iC8/Nujq3easZ+IAr8m6NsuyT+KfmjOlozcxQZq2IqVelZz5cwDtJz7UJbtZn3ueCo/1Tw1JDdg==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@example.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 216ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:40:04 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 299ms (Views: 285.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/login" for ::1 at 2019-05-01 18:40:08 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (1.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:50:03 +0200
+  [1m[35m (28.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:50:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 225ms (Views: 223.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:53:03 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 233ms (Views: 194.3ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/products/new" for ::1 at 2019-05-01 18:53:05 +0200
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:53:05 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 206ms (Views: 202.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:53:09 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:53:09 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 240ms (Views: 237.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:53:14 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for ::1 at 2019-05-01 18:53:15 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:53:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 252ms (Views: 250.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-01 18:53:22 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (117.9ms)
+Completed 200 OK in 300ms (Views: 297.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:53:46 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:53:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 277ms (Views: 273.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:54:10 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:54:10 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 222ms (Views: 206.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:54:25 +0200
+  [1m[35m (15.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 916ms (Views: 901.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:54:32 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:54:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 365ms (Views: 329.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-05-01 18:54:35 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+QJ43ujphZ/WBV2BXpS1tfnMkzVxd4JDui09YD2IMjGNpcPpV6i8Hk4mZnzTMJ7vFHwrNo7C7mn/oFIx/Oucqg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@example.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+QJ43ujphZ/WBV2BXpS1tfnMkzVxd4JDui09YD2IMjGNpcPpV6i8Hk4mZnzTMJ7vFHwrNo7C7mn/oFIx/Oucqg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 447ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-01 18:55:54 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 208ms (Views: 205.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2019-05-01 18:56:04 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S8RNwjnyK5fGxNi4XWmGOfRc9tcn3XB0OamBV/LRyBzQ526+Z77xWNWWm4odTKId/hDnLMT4siENZKO+xY0P+w==", "user"=>{"name"=>"esraa", "email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'esraa@gmail.com' LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 454ms (Views: 251.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for ::1 at 2019-05-01 18:56:27 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kb8GgCa6B+TwwIL60nSY3svdc7NpWghJM24R/4qCZrxdGL23mfs+ZWjjuQdf0LOEJm3LsJbvZGN2436uS+HIJw==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f128c88ef78 @tempfile=#<Tempfile:/tmp/RackMultipart20190501-24029-kjlzy8.png>, @original_filename="Screenshot from 2019-02-14 23-37-28.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Screenshot from 2019-02-14 23-37-28.png\"\r\nContent-Type: image/png\r\n">, "name"=>"esraa", "email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+[36m  Disk Storage (19.9ms) [0m[32mUploaded file to key: p2khDygrW83ZcXTLrDBsShjQ (checksum: RgUoB0bIsqaWM3tx/CuGhQ==)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('p2khDygrW83ZcXTLrDBsShjQ', 'Screenshot from 2019-02-14 23-37-28.png', 'image/png', '{\"identified\":true}', 1313384, 'RgUoB0bIsqaWM3tx/CuGhQ==', '2019-05-01 16:56:27')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (63.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'esraa@gmail.com' LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `name`) VALUES ('esraa@gmail.com', '$2a$11$aQucGtsQ7xtO2K0iXT9evuBuaOpmYnpXngp701/HpKqM0f8pIJ63C', '2019-05-01 16:56:27', '2019-05-01 16:56:27', 'esraa')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Create (17.8ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('avatar', 'User', 1, 1, '2019-05-01 16:56:27')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (24.3ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2019-05-01 16:56:27' WHERE `users`.`id` = 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (37.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 843873ef-da3f-4b9b-9ef3-e28426ec60a0) to Async(default) with arguments: #<GlobalID:0x00007f128e05d280 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 671ms (ActiveRecord: 148.4ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:56:28 +0200
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0] Performing ActiveStorage::AnalyzeJob (Job ID: 843873ef-da3f-4b9b-9ef3-e28426ec60a0) from Async(default) with arguments: #<GlobalID:0x00007f128e0d7738 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0] [36m  Disk Storage (2.0ms) [0m[34mDownloaded file from key: p2khDygrW83ZcXTLrDBsShjQ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   [1m[35m (71.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [843873ef-da3f-4b9b-9ef3-e28426ec60a0] Performed ActiveStorage::AnalyzeJob (Job ID: 843873ef-da3f-4b9b-9ef3-e28426ec60a0) from Async(default) in 84.03ms
+  [1m[35m (74.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb (218.6ms)
+Completed 200 OK in 261ms (Views: 221.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:56:47 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:1
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 270ms (Views: 268.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 18:57:54 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb (150.9ms)
+Completed 200 OK in 164ms (Views: 152.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/comments" for ::1 at 2019-05-01 18:57:57 +0200
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `active_admin_comments` WHERE `active_admin_comments`.`namespace` = 'admin'[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `active_admin_comments` WHERE `active_admin_comments`.`namespace` = 'admin' LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`resource_type` FROM `active_admin_comments` ORDER BY resource_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`author_type` FROM `active_admin_comments` ORDER BY author_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (440.1ms)
+Completed 200 OK in 495ms (Views: 440.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/admin/comments?scope=all" for ::1 at 2019-05-01 18:58:02 +0200
+Processing by Admin::CommentsController#index as HTML
+  Parameters: {"scope"=>"all"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `active_admin_comments` WHERE `active_admin_comments`.`namespace` = 'admin'[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `active_admin_comments` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`resource_type` FROM `active_admin_comments` ORDER BY resource_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`author_type` FROM `active_admin_comments` ORDER BY author_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (303.9ms)
+Completed 200 OK in 323ms (Views: 304.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 18:58:15 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 18:58:15 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:1
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 257ms (Views: 253.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/comments?scope=all" for ::1 at 2019-05-01 19:03:07 +0200
+Processing by Admin::CommentsController#index as HTML
+  Parameters: {"scope"=>"all"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `active_admin_comments` WHERE `active_admin_comments`.`namespace` = 'admin'[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `active_admin_comments` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`resource_type` FROM `active_admin_comments` ORDER BY resource_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DISTINCT `active_admin_comments`.`author_type` FROM `active_admin_comments` ORDER BY author_type asc[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (228.0ms)
+Completed 200 OK in 294ms (Views: 230.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/admin/" for ::1 at 2019-05-01 19:03:11 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb (218.4ms)
+Completed 200 OK in 229ms (Views: 221.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/admin_users" for ::1 at 2019-05-01 19:03:14 +0200
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `admin_users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `admin_users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `admin_users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `admin_users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` ORDER BY `admin_users`.`id` desc LIMIT 30 OFFSET 0[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (228.4ms)
+Completed 200 OK in 240ms (Views: 230.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 19:03:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:1
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 270ms (Views: 259.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/logout" for ::1 at 2019-05-01 19:03:26 +0200
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nhxB10sxffy0QlVpKhRnMSIBEuhGsMS1f9LV8lqqZcvqu/rg9HBEfSxhbpSnsExrz7Gq67kFqJ86X7qjm8nLUA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (1.1ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 36ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:03:26 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 19:03:26 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 227ms (Views: 225.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-05-01 19:03:58 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kteyviBPGJHvqNLjgyl1ojD+OpsN0d8JYcY0j0uQChOi6LxItmxbW0/j6GMQxk/QMH1XTEoEKdjshUeXKA2E4w==", "user"=>{"email"=>"esraa2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'esraa2@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 1.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kteyviBPGJHvqNLjgyl1ojD+OpsN0d8JYcY0j0uQChOi6LxItmxbW0/j6GMQxk/QMH1XTEoEKdjshUeXKA2E4w==", "user"=>{"email"=>"esraa2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 479ms (Views: 303.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-01 19:04:01 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 196ms (Views: 194.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2019-05-01 19:04:19 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ZcG+katU4RqpT0palJlDsI0tPaUxLnvgcTNDmXJ9Sm8L0ToDNVEWBYPLsMItc7Dq8oaNls9Mf7eHmjm8pq2Vg==", "user"=>{"name"=>"esraa2", "email"=>"esraa2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'esraa2@gmail.com' LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 473ms (Views: 284.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2019-05-01 19:04:36 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BNijjBpnqE+uI7FCTDOD5DIKIGLm9FNCzkt0W3wSh8A05616jETrhQ5oi8Lf3LmWMolNtaEhpZNDCAdDH48JMA==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f128f526fe0 @tempfile=#<Tempfile:/tmp/RackMultipart20190501-24029-hqepnb.png>, @original_filename="Screenshot from 2019-02-14 19-38-37.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Screenshot from 2019-02-14 19-38-37.png\"\r\nContent-Type: image/png\r\n">, "name"=>"esraa2", "email"=>"esraa2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+[36m  Disk Storage (5.8ms) [0m[32mUploaded file to key: 8rvHXe9w5gc93Fyvi2h4xF9z (checksum: NWSZNftJz8uVDUy/OgS6Vg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('8rvHXe9w5gc93Fyvi2h4xF9z', 'Screenshot from 2019-02-14 19-38-37.png', 'image/png', '{\"identified\":true}', 614904, 'NWSZNftJz8uVDUy/OgS6Vg==', '2019-05-01 17:04:36')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (98.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'esraa2@gmail.com' LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `name`) VALUES ('esraa2@gmail.com', '$2a$11$g/L7m6OYMdTcWPOyZpZPSesComAawrmZXs.ojemtjbvMagmrKMNBO', '2019-05-01 17:04:36', '2019-05-01 17:04:36', 'esraa2')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Create (89.7ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('avatar', 'User', 2, 2, '2019-05-01 17:04:36')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (84.5ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2019-05-01 17:04:36' WHERE `users`.`id` = 2[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 99b2677a-3a7d-4b4e-939f-0e3141dea2bb) to Async(default) with arguments: #<GlobalID:0x00007f12a058a7a0 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 572ms (ActiveRecord: 320.5ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:04:37 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/login" for ::1 at 2019-05-01 19:04:37 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  [1m[35m (17.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb] Performing ActiveStorage::AnalyzeJob (Job ID: 99b2677a-3a7d-4b4e-939f-0e3141dea2bb) from Async(default) with arguments: #<GlobalID:0x00007f12a07be828 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb] [36m  Disk Storage (1.0ms) [0m[34mDownloaded file from key: 8rvHXe9w5gc93Fyvi2h4xF9z[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb] Skipping image analysis because the mini_magick gem isn't installed
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (2.9ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   [1m[35m (14.2ms)[0m  [1m[35mBEGIN[0m
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (40.9ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   [1m[36mActiveStorage::Blob Update (1.5ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 2[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [99b2677a-3a7d-4b4e-939f-0e3141dea2bb] Performed ActiveStorage::AnalyzeJob (Job ID: 99b2677a-3a7d-4b4e-939f-0e3141dea2bb) from Async(default) in 81.91ms
+Completed 200 OK in 223ms (Views: 218.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/admin/login" for ::1 at 2019-05-01 19:04:55 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QyDiTsWy6WZBbVXToeYz+NGDDWDTPL7mrGxuE3+X6R1zH+y4U5GqrOEmb1MyCQmK0QBgt5TpSDchLx0LHApn7Q==", "admin_user"=>{"email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'esraa@gmail.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.0ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QyDiTsWy6WZBbVXToeYz+NGDDWDTPL7mrGxuE3+X6R1zH+y4U5GqrOEmb1MyCQmK0QBgt5TpSDchLx0LHApn7Q==", "admin_user"=>{"email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (3.4ms)
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (75.2ms)
+Completed 200 OK in 402ms (Views: 228.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for ::1 at 2019-05-01 19:07:49 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QyDiTsWy6WZBbVXToeYz+NGDDWDTPL7mrGxuE3+X6R1zH+y4U5GqrOEmb1MyCQmK0QBgt5TpSDchLx0LHApn7Q==", "admin_user"=>{"email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (2.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'esraa@gmail.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 2.8ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QyDiTsWy6WZBbVXToeYz+NGDDWDTPL7mrGxuE3+X6R1zH+y4U5GqrOEmb1MyCQmK0QBgt5TpSDchLx0LHApn7Q==", "admin_user"=>{"email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (1.2ms)
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (35.0ms)
+Completed 200 OK in 387ms (Views: 208.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for ::1 at 2019-05-01 19:07:52 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (5.0ms)
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (44.0ms)
+Completed 200 OK in 246ms (Views: 238.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-05-01 19:07:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2019-05-01 19:07:57 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-05-01 19:08:28 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dDQU1q0rONyCFRJkpKvKnVkvEYom+aUgrYoxmOEW8lcAk6/hEmoBXRo2KZkpD+HHtJ+pidlMyQroB17JIHVczA=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.6.2) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-01 19:08:39 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:1
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 210ms (Views: 207.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-01 19:08:43 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"czMbYoLJDSNx9nSJLZ1F0RGpa7yKEB/nzGyYh2CM8vVDDBWUFOpO6dG9Tgm+cn+jESoGa83F6TZBL+ufAxF8BQ=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'User' AND `active_storage_attachments`.`name` = 'avatar' LIMIT 1[0m
+  ↳ app/views/devise/registrations/edit.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/devise/registrations/edit.html.erb:8
+  Rendered devise/registrations/edit.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 287ms (Views: 282.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f/Screenshot%20from%202019-02-14%2019-38-37.png" for ::1 at 2019-05-01 19:08:43 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f", "filename"=>"Screenshot from 2019-02-14 19-38-37"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (4.7ms) [0m[34mGenerated URL for file at key: 8rvHXe9w5gc93Fyvi2h4xF9z (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRPSEoyU0ZobE9YYzFaMk01TTBaNWRta3lhRFI0UmpsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSi9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlVMk55WldWdWMyaHZkQ0JtY205dElESXdNVGt0TURJdE1UUWdNVGt0TXpndE16Y3VjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkVFkzSmxaVzV6YUc5MEpUSXdabkp2YlNVeU1ESXdNVGt0TURJdE1UUWxNakF4T1Mwek9DMHpOeTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAxOS0wNS0wMVQxNzoxMzo0My43NTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a19ab96babb1ac624045a40d2f4e8506647d5445/Screenshot%20from%202019-02-14%2019-38-37.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screenshot+from+2019-02-14+19-38-37.png%22%3B+filename%2A%3DUTF-8%27%27Screenshot%2520from%25202019-02-14%252019-38-37.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRPSEoyU0ZobE9YYzFaMk01TTBaNWRta3lhRFI0UmpsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSi9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlVMk55WldWdWMyaHZkQ0JtY205dElESXdNVGt0TURJdE1UUWdNVGt0TXpndE16Y3VjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkVFkzSmxaVzV6YUc5MEpUSXdabkp2YlNVeU1ESXdNVGt0TURJdE1UUWxNakF4T1Mwek9DMHpOeTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAxOS0wNS0wMVQxNzoxMzo0My43NTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a19ab96babb1ac624045a40d2f4e8506647d5445/Screenshot%20from%202019-02-14%2019-38-37.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screenshot+from+2019-02-14+19-38-37.png%22%3B+filename%2A%3DUTF-8%27%27Screenshot%2520from%25202019-02-14%252019-38-37.png
+Completed 302 Found in 18ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRPSEoyU0ZobE9YYzFaMk01TTBaNWRta3lhRFI0UmpsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSi9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlVMk55WldWdWMyaHZkQ0JtY205dElESXdNVGt0TURJdE1UUWdNVGt0TXpndE16Y3VjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkVFkzSmxaVzV6YUc5MEpUSXdabkp2YlNVeU1ESXdNVGt0TURJdE1UUWxNakF4T1Mwek9DMHpOeTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAxOS0wNS0wMVQxNzoxMzo0My43NTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a19ab96babb1ac624045a40d2f4e8506647d5445/Screenshot%20from%202019-02-14%2019-38-37.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22Screenshot+from+2019-02-14+19-38-37.png%22%3B+filename%2A%3DUTF-8%27%27Screenshot%2520from%25202019-02-14%252019-38-37.png" for ::1 at 2019-05-01 19:08:43 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"Screenshot from 2019-02-14 19-38-37.png\"; filename*=UTF-8''Screenshot%20from%202019-02-14%2019-38-37.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRPSEoyU0ZobE9YYzFaMk01TTBaNWRta3lhRFI0UmpsNkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSi9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlVMk55WldWdWMyaHZkQ0JtY205dElESXdNVGt0TURJdE1UUWdNVGt0TXpndE16Y3VjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkVFkzSmxaVzV6YUc5MEpUSXdabkp2YlNVeU1ESXdNVGt0TURJdE1UUWxNakF4T1Mwek9DMHpOeTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAxOS0wNS0wMVQxNzoxMzo0My43NTZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a19ab96babb1ac624045a40d2f4e8506647d5445", "filename"=>"Screenshot from 2019-02-14 19-38-37"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-05-01 19:08:48 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"czMbYoLJDSNx9nSJLZ1F0RGpa7yKEB/nzGyYh2CM8vVDDBWUFOpO6dG9Tgm+cn+jESoGa83F6TZBL+ufAxF8BQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-01 19:08:48 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 225ms (Views: 221.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-05-01 19:08:57 +0200
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 19:08:57 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 195ms (Views: 190.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:09:00 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 19:09:00 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 254ms (Views: 251.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-05-01 19:23:05 +0200
+  [1m[35m (23.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2019-05-01 19:23:11 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (295.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (379.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('495222145204032225', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateStores (20190428131620)
+  [1m[35m (327.1ms)[0m  [1m[35mCREATE TABLE `stores` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `summary` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131620_create_stores.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131620')[0m
+  ↳ bin/rails:4
+  [1m[35m (46.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateShoppingCarts (20190428131621)
+  [1m[35m (453.3ms)[0m  [1m[35mCREATE TABLE `shopping_carts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131621_create_shopping_carts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131621')[0m
+  ↳ bin/rails:4
+  [1m[35m (329.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateOrders (20190428131622)
+  [1m[35m (247.6ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131622_create_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131622')[0m
+  ↳ bin/rails:4
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateOrderStates (20190428131623)
+  [1m[35m (290.0ms)[0m  [1m[35mCREATE TABLE `order_states` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131623_create_order_states.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131623')[0m
+  ↳ bin/rails:4
+  [1m[35m (48.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateWishLists (20190428131624)
+  [1m[35m (345.6ms)[0m  [1m[35mCREATE TABLE `wish_lists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131624_create_wish_lists.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131624')[0m
+  ↳ bin/rails:4
+  [1m[35m (62.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCopons (20190428131625)
+  [1m[35m (348.2ms)[0m  [1m[35mCREATE TABLE `copons` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `has_fixed_amount` tinyint(1), `discount` int, `expiration_type` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131625_create_copons.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131625')[0m
+  ↳ bin/rails:4
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateUsedCopons (20190428131626)
+  [1m[35m (322.6ms)[0m  [1m[35mCREATE TABLE `used_copons` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131626_create_used_copons.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131626')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateProducts (20190428131628)
+  [1m[35m (344.5ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `price` float(24), `quantity` int, `title` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131628_create_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131628')[0m
+  ↳ bin/rails:4
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateProductImages (20190428131629)
+  [1m[35m (379.4ms)[0m  [1m[35mCREATE TABLE `product_images` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131629_create_product_images.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131629')[0m
+  ↳ bin/rails:4
+  [1m[35m (61.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateBrands (20190428131630)
+  [1m[35m (233.8ms)[0m  [1m[35mCREATE TABLE `brands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131630_create_brands.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131630')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCategories (20190428131631)
+  [1m[35m (279.3ms)[0m  [1m[35mCREATE TABLE `categories` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131631_create_categories.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131631')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateReviews (20190428131632)
+  [1m[35m (278.1ms)[0m  [1m[35mCREATE TABLE `reviews` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `comment` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131632_create_reviews.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131632')[0m
+  ↳ bin/rails:4
+  [1m[35m (62.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateRatings (20190428131634)
+  [1m[35m (311.5ms)[0m  [1m[35mCREATE TABLE `ratings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `rate` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131634_create_ratings.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131634')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateExpirationDates (20190428131635)
+  [1m[35m (255.7ms)[0m  [1m[35mCREATE TABLE `expiration_dates` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `date` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131635_create_expiration_dates.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131635')[0m
+  ↳ bin/rails:4
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateExpirationUsages (20190428131636)
+  [1m[35m (268.0ms)[0m  [1m[35mCREATE TABLE `expiration_usages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `usage` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428131636_create_expiration_usages.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428131636')[0m
+  ↳ bin/rails:4
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateUsers (20190428162950)
+  [1m[35m (331.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:5
+  [1m[35m (262.8ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:39
+  [1m[35m (344.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20190428162950_devise_create_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428162950')[0m
+  ↳ bin/rails:4
+  [1m[35m (135.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddNameToUser (20190428165903)
+  [1m[35m (669.5ms)[0m  [1m[35mALTER TABLE `users` ADD `name` varchar(255)[0m
+  ↳ db/migrate/20190428165903_add_name_to_user.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190428165903')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveStorageTables (20190429110333)
+  [1m[35m (399.5ms)[0m  [1m[35mCREATE TABLE `active_storage_blobs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `key` varchar(255) NOT NULL, `filename` varchar(255) NOT NULL, `content_type` varchar(255), `metadata` text, `byte_size` bigint NOT NULL, `checksum` varchar(255) NOT NULL, `created_at` datetime NOT NULL, UNIQUE INDEX `index_active_storage_blobs_on_key`  (`key`))[0m
+  ↳ db/migrate/20190429110333_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (330.0ms)[0m  [1m[35mCREATE TABLE `active_storage_attachments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `record_type` varchar(255) NOT NULL, `record_id` bigint NOT NULL, `blob_id` bigint NOT NULL, `created_at` datetime NOT NULL,  INDEX `index_active_storage_attachments_on_blob_id`  (`blob_id`), UNIQUE INDEX `index_active_storage_attachments_uniqueness`  (`record_type`, `record_id`, `name`, `blob_id`), CONSTRAINT `fk_rails_c3b3935057`
+FOREIGN KEY (`blob_id`)
+  REFERENCES `active_storage_blobs` (`id`)
+)[0m
+  ↳ db/migrate/20190429110333_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190429110333')[0m
+  ↳ bin/rails:4
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddRoleToUser (20190429170315)
+  [1m[35m (691.5ms)[0m  [1m[35mALTER TABLE `users` ADD `role` int DEFAULT 0[0m
+  ↳ db/migrate/20190429170315_add_role_to_user.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190429170315')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddBrandToProducts (20190501042013)
+  [1m[35m (552.9ms)[0m  [1m[35mALTER TABLE `products` ADD `brand_id` bigint[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (266.8ms)[0m  [1m[35mCREATE  INDEX `index_products_on_brand_id`  ON `products` (`brand_id`) [0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (914.5ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_f3b4d49caa`
+FOREIGN KEY (`brand_id`)
+  REFERENCES `brands` (`id`)
+[0m
+  ↳ db/migrate/20190501042013_add_brand_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042013')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddCategoryToProducts (20190501042124)
+  [1m[35m (620.5ms)[0m  [1m[35mALTER TABLE `products` ADD `category_id` bigint[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (345.7ms)[0m  [1m[35mCREATE  INDEX `index_products_on_category_id`  ON `products` (`category_id`) [0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (847.8ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_fb915499a4`
+FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+[0m
+  ↳ db/migrate/20190501042124_add_category_to_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042124')[0m
+  ↳ bin/rails:4
+  [1m[35m (62.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddSellerToProducts (20190501042145)
+  [1m[35m (536.5ms)[0m  [1m[35mALTER TABLE `products` ADD `user_id` bigint[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (242.5ms)[0m  [1m[35mCREATE  INDEX `index_products_on_user_id`  ON `products` (`user_id`) [0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (892.0ms)[0m  [1m[35mALTER TABLE `products` ADD CONSTRAINT `fk_rails_dee2631783`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20190501042145_add_seller_to_products.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501042145')[0m
+  ↳ bin/rails:4
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateAdminUsers (20190501160146)
+  [1m[35m (335.3ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:5
+  [1m[35m (241.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_email`  ON `admin_users` (`email`) [0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:39
+  [1m[35m (244.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token`  ON `admin_users` (`reset_password_token`) [0m
+  ↳ db/migrate/20190501160146_devise_create_admin_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501160146')[0m
+  ↳ bin/rails:4
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveAdminComments (20190501160148)
+  [1m[35m (321.6ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`),  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`))[0m
+  ↳ db/migrate/20190501160148_create_active_admin_comments.rb:3
+  [1m[35m (241.0ms)[0m  [1m[35mCREATE  INDEX `index_active_admin_comments_on_namespace`  ON `active_admin_comments` (`namespace`) [0m
+  ↳ db/migrate/20190501160148_create_active_admin_comments.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190501160148')[0m
+  ↳ bin/rails:4
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2019-05-01 17:30:47', '2019-05-01 17:30:47')[0m
+  ↳ bin/rails:4
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('495222145204032225')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1[0m
+  ↳ db/seeds.rb:8
+  [1m[36mAdminUser Create (0.3ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('admin@example.com', '$2a$11$.DBnX9yP8OFErzWg4ZJl4uf4noZQ6P3bsfP4kOgKDlEVFTE8igR7y', '2019-05-01 17:31:01', '2019-05-01 17:31:01')[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+Started GET "/users" for ::1 at 2019-05-01 19:31:10 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-05-01 19:31:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 2336ms (Views: 2269.9ms | ActiveRecord: 37.1ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:31:18 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-01 19:31:18 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 254ms (Views: 224.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-01 19:31:22 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 242ms (Views: 239.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2019-05-01 19:31:41 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GkorZAgBE3jY3UuvLd9AsVUg3koSyVeLFt1jRm6aMTg9wYGTk1lzWPz3zpxTdiiwGvkGiaJcyJW4rVDoyiZIrg==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f61ec40d6e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190501-26981-ypmvpo.png>, @original_filename="Screenshot from 2019-02-14 23-37-28.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"Screenshot from 2019-02-14 23-37-28.png\"\r\nContent-Type: image/png\r\n">, "name"=>"esraa", "email"=>"esraa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+[36m  Disk Storage (15.8ms) [0m[32mUploaded file to key: YbdZHQ143LNRBKvookp1ZSj7 (checksum: RgUoB0bIsqaWM3tx/CuGhQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('YbdZHQ143LNRBKvookp1ZSj7', 'Screenshot from 2019-02-14 23-37-28.png', 'image/png', '{\"identified\":true}', 1313384, 'RgUoB0bIsqaWM3tx/CuGhQ==', '2019-05-01 17:31:41')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'esraa@gmail.com' LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `name`) VALUES ('esraa@gmail.com', '$2a$11$ygA.ZGk1rgOwd8gFJ1S9BOXuSHOyuLfIMHNIfxIymnhLPrJHgERci', '2019-05-01 17:31:41', '2019-05-01 17:31:41', 'esraa')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('avatar', 'User', 1, 1, '2019-05-01 17:31:41')[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2019-05-01 17:31:41' WHERE `users`.`id` = 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 84d59d23-5e86-4609-b75e-b6cd66e712bf) to Async(default) with arguments: #<GlobalID:0x00007f61f46c9640 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 657ms (ActiveRecord: 71.2ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:31:41 +0200
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf] Performing ActiveStorage::AnalyzeJob (Job ID: 84d59d23-5e86-4609-b75e-b6cd66e712bf) from Async(default) with arguments: #<GlobalID:0x00007f61f877d218 @uri=#<URI::GID gid://ecommerce/ActiveStorage::Blob/1>>
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.4ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf] [36m  Disk Storage (3.4ms) [0m[34mDownloaded file from key: YbdZHQ143LNRBKvookp1ZSj7[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/admin/login" for ::1 at 2019-05-01 19:31:42 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   [1m[35m (79.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf]   ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [84d59d23-5e86-4609-b75e-b6cd66e712bf] Performed ActiveStorage::AnalyzeJob (Job ID: 84d59d23-5e86-4609-b75e-b6cd66e712bf) from Async(default) in 91.38ms
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/shared/_links.erb (1.6ms)
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (105.1ms)
+Completed 200 OK in 406ms (Views: 393.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/admin/login" for ::1 at 2019-05-01 19:31:44 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0awkH5GnpVqpHZu8FaKSN88lGz2SeXt9kvRZdvGMZ/1cz8KpVWtvf6aFEXX1wvcpFpMiAxwn8ywBZcvYx9Pdng==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@example.com' ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 245ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2019-05-01 19:31:45 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/page/index.html.arb (228.7ms)
+Completed 200 OK in 258ms (Views: 245.4ms | ActiveRecord: 0.7ms)
+
+
