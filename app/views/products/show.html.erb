@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Images:</strong>
+  <br>
+  <% @product.images.each do |image| %>
+    <%= image_tag image, width: '200px', height: '200px' %>
+  <% end %>
+</p>
+
+<p>
   <strong>Brand:</strong>
   <%= @product.brand.name %>
 </p>

@@ -36,6 +36,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
