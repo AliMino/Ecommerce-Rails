@@ -7813,3 +7813,64 @@ Processing by BrandsController#create as HTML
 Completed 200 OK in 100ms (Views: 93.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/categories" for ::1 at 2019-05-01 06:17:40 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/categories/index.html.erb:14
+  Rendered categories/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 99ms (Views: 79.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/categories/new" for ::1 at 2019-05-01 06:18:15 +0200
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (2.1ms)
+  Rendered categories/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 120ms (Views: 94.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/categories" for ::1 at 2019-05-01 06:18:20 +0200
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mCeVTFRkBhx09Cs23Z6EQ7KJZLU9//ajdGKQj/+D0Yft5HcgpJqivZPeWseBED5cQXGZGozFf01ON+CDYdnYTg==", "category"=>{"name"=>"electronic"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` = BINARY 'Electronics' LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO `categories` (`name`, `created_at`, `updated_at`) VALUES ('Electronics', '2019-05-01 04:18:20', '2019-05-01 04:18:20')[0m
+  ↳ app/controllers/categories_controller.rb:30
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:30
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/categories/1" for ::1 at 2019-05-01 06:18:20 +0200
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 94ms (Views: 86.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/categories" for ::1 at 2019-05-01 06:18:33 +0200
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories`[0m
+  ↳ app/views/categories/index.html.erb:14
+  Rendered categories/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 84ms (Views: 76.5ms | ActiveRecord: 0.9ms)
+
+
