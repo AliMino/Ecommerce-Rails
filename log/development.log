@@ -12583,3 +12583,136 @@ Unpermitted parameter: :user_id
 Completed 200 OK in 229ms (Views: 203.3ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/admin/stores" for ::1 at 2019-05-02 21:18:59 +0200
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::StoresController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (1.7ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `stores` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (745.4ms)
+Completed 200 OK in 820ms (Views: 747.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/admin/stores/new" for ::1 at 2019-05-02 21:19:04 +0200
+Processing by Admin::StoresController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb (183.8ms)
+Completed 200 OK in 199ms (Views: 185.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/admin/stores" for ::1 at 2019-05-02 21:19:17 +0200
+Processing by Admin::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ablwcAjbT8RiPpA4sv0oitOrkn8+s8YkcdFEXQj0Yqv+amx7sgpqxlBi4v8AuepLj9VTURvOdh8oIzoY7q53A==", "store"=>{"user_id"=>"1", "name"=>"name", "summary"=>"summary"}, "commit"=>"Create Store"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `stores` WHERE `stores`.`user_id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Create (0.3ms)[0m  [1m[32mINSERT INTO `stores` (`name`, `summary`, `created_at`, `updated_at`, `user_id`) VALUES ('name', 'summary', '2019-05-02 19:19:17', '2019-05-02 19:19:17', 1)[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (54.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/admin/stores/5
+Completed 302 Found in 81ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/admin/stores/5" for ::1 at 2019-05-02 21:19:17 +0200
+Processing by Admin::StoresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  `stores`.* FROM `stores` WHERE `stores`.`id` = 5 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `active_admin_comments` WHERE `active_admin_comments`.`resource_type` = 'Store' AND `active_admin_comments`.`resource_id` = 5 AND `active_admin_comments`.`namespace` = 'admin'[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `active_admin_comments` WHERE `active_admin_comments`.`resource_type` = 'Store' AND `active_admin_comments`.`resource_id` = 5 AND `active_admin_comments`.`namespace` = 'admin' LIMIT 1 OFFSET 0[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/show.html.arb (174.6ms)
+Completed 200 OK in 183ms (Views: 176.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/stores" for ::1 at 2019-05-02 21:19:23 +0200
+Processing by Admin::StoresController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `stores` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `stores` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `stores`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM `stores` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  `stores`.* FROM `stores` ORDER BY `stores`.`id` desc LIMIT 30 OFFSET 0[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/index.html.arb (177.2ms)
+Completed 200 OK in 188ms (Views: 178.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/stores/new" for ::1 at 2019-05-02 21:19:28 +0200
+Processing by Admin::StoresController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (1.3ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb (164.3ms)
+Completed 200 OK in 176ms (Views: 165.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/admin/stores" for ::1 at 2019-05-02 21:19:38 +0200
+Processing by Admin::StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bnuyDkdMXANIH/7Ms3Xit0uqbneFMpBXhE7DIT6tCLE4JP5+aacYl0DWjwetvPG8TtuVcz2nZpdpKQrYKTRg5w==", "store"=>{"user_id"=>"1", "name"=>"x", "summary"=>"y"}, "commit"=>"Create Store"}
+  [1m[36mUser Load (113.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT  `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 ORDER BY `admin_users`.`id` ASC LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mStore Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `stores` WHERE `stores`.`user_id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered /home/compiler/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activeadmin-2.0.0/app/views/active_admin/resource/new.html.arb (160.7ms)
+Completed 200 OK in 299ms (Views: 162.3ms | ActiveRecord: 116.1ms)
+
+
