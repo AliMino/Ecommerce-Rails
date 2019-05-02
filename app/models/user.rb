@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 5 }
   validate :validate_avatar
 
+  has_one :store
   has_one_attached :avatar
   enum role: { admin: 2, seller: 1, buyer: 0 }
 
