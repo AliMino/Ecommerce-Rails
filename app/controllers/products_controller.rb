@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  helper_method :createOrder
   # GET /products
   # GET /products.json
   def index
@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    product_associatives(@product, params[:product])
 
     respond_to do |format|
       if @product.save
@@ -41,6 +42,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    product_associatives(@product, params[:product])
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -70,6 +72,15 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:price, :quantity, :title, :description)
+      params.require(:product).permit(:price, :quantity, :title, :description, images: [])
+    end
+
+    def product_associatives(product, parameters)
+      product.user = current_user
+      product.brand = Brand.find(parameters[:brand])
+      product.category = Category.find(parameters[:category])
+    end
+    def createOrder
+      OrdersController.create
     end
 end

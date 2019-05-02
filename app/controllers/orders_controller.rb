@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
   # POST /orders
   # POST /orders.json
-  def create
+  def self.create
     @order = Order.new(order_params)
 
     respond_to do |format|

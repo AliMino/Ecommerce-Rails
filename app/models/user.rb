@@ -4,10 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   validates :name, presence: true, length: { minimum: 5 }
   validate :validate_avatar
+  # after_create :create_cart
 
   has_one_attached :avatar
+  has_one :shopping_cart
+  # has_one :ShoppingCart
   enum role: { admin: 2, seller: 1, buyer: 0 }
-
+  after_create :createCart
 
   def self.assign_role(user, role)
     user.role = role
@@ -23,6 +26,13 @@ class User < ApplicationRecord
     end
     buyers
   end
+
+  def createCart
+ #   self.inspect
+ ShoppingCartsController.create
+  end  
+
+  
 
   def self.get_all_sellers
     sellers = []
@@ -46,4 +56,5 @@ class User < ApplicationRecord
       end
       puts self.inspect
     end
+
 end
