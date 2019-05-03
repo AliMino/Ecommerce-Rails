@@ -11,7 +11,6 @@ class User < ApplicationRecord
   # has_one :ShoppingCart
   enum role: { admin: 2, seller: 1, buyer: 0 }
   after_create :createCart
-
   def self.assign_role(user, role)
     user.role = role
     user.save
