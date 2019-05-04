@@ -3,6 +3,7 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :user    # seller
     has_many_attached :images
+    has_many :orders
 
     validates :title, :presence => true, length: { minimum: 5 }
     validates :description, :presence => true, length: { minimum: 10 }
