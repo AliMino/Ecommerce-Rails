@@ -1,11 +1,12 @@
 class ShoppingCartsController < ApplicationController
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
+  helper_method :createOrder
   
   # GET /shopping_carts
   # GET /shopping_carts.json
 
    
-  2
+  
   def index
     @shopping_carts = ShoppingCart.all
   end
@@ -45,7 +46,9 @@ class ShoppingCartsController < ApplicationController
       end
     end
   end
-
+  def self.createOrder
+    OrdersController.create
+  end  
 
   # PATCH/PUT /shopping_carts/1
   # PATCH/PUT /shopping_carts/1.json

@@ -8,10 +8,16 @@ class Product < ApplicationRecord
     validates :description, :presence => true, length: { minimum: 10 }
     validates :quantity, :presence => true
     validate :seller_existance
-
+   
     def self.get_all_products
         Product.all
     end
+    def self.createOrder
+    
+     OrdersController.create
+    
+    end 
+
 
     private
         def seller_existance
@@ -31,4 +37,5 @@ class Product < ApplicationRecord
                 errors.add(:images, "are missing")
             end
         end
+        
 end

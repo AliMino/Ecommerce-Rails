@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
   end
+ 
 
   # GET /products/new
   def new
@@ -63,6 +64,8 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -80,7 +83,5 @@ class ProductsController < ApplicationController
       product.brand = Brand.find(parameters[:brand])
       product.category = Category.find(parameters[:category])
     end
-    def createOrder
-      OrdersController.create
-    end
+   
 end
