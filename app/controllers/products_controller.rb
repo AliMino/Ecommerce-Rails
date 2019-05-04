@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  helper_method :createOrder
   # GET /products
   # GET /products.json
   def index
@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
   end
+ 
 
   # GET /products/new
   def new
@@ -63,6 +64,8 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -80,4 +83,5 @@ class ProductsController < ApplicationController
       product.brand = Brand.find(parameters[:brand])
       product.category = Category.find(parameters[:category])
     end
+   
 end

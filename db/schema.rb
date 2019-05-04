@@ -91,18 +91,17 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_states", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.bigint "user_id"
     t.bigint "product_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+=======
+    t.integer "state", default: 0
+>>>>>>> layout
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -140,6 +139,8 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   create_table "shopping_carts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -181,5 +182,9 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
+<<<<<<< HEAD
   add_foreign_key "stores", "users"
+=======
+  add_foreign_key "shopping_carts", "users"
+>>>>>>> layout
 end

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+   
 
   # GET /orders
   # GET /orders.json
@@ -23,8 +24,14 @@ class OrdersController < ApplicationController
 
   # POST /orders
   # POST /orders.json
-  def create
-    @order = Order.new(order_params)
+
+  
+
+  def create()
+    puts "doha"
+    @order = Order.new()
+    @order.state=0
+    @order.save
 
     respond_to do |format|
       if @order.save
@@ -60,6 +67,7 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
