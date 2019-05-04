@@ -27,21 +27,24 @@ class OrdersController < ApplicationController
 
   
 
-  def create()
-    puts "doha"
+  def create
+    # params[:format].inspect
     @order = Order.new()
-    @order.state=0
+    @order.state= 0
+    @order.user_id=current_user.id
+    @order.product_id=params[:format]
+ 
     @order.save
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @order.save
+    #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
+    #     format.json { render :show, status: :created, location: @order }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @order.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /orders/1

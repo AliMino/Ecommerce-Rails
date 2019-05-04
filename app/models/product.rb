@@ -13,12 +13,6 @@ class Product < ApplicationRecord
     def self.get_all_products
         Product.all
     end
-    def self.createOrder
-    
-     OrdersController.create
-    
-    end 
-
 
     private
         def seller_existance

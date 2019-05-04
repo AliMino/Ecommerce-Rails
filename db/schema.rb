@@ -94,14 +94,11 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
+    t.integer "state", default: 0
     t.bigint "user_id"
     t.bigint "product_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-=======
-    t.integer "state", default: 0
->>>>>>> layout
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -182,9 +179,6 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
-<<<<<<< HEAD
-  add_foreign_key "stores", "users"
-=======
   add_foreign_key "shopping_carts", "users"
->>>>>>> layout
+  add_foreign_key "stores", "users"
 end
