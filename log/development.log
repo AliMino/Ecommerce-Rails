@@ -41054,3 +41054,1000 @@ No template found for OrdersController#update, rendering head :no_content
 Completed 204 No Content in 169ms (ActiveRecord: 123.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-05-05 14:20:03 +0200
+  [1m[35m (67.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (22.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:29
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:30
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/products/index.html.erb:33
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:34
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:30
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/products/index.html.erb:33
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ app/views/products/index.html.erb:34
+  Rendered products/index.html.erb within layouts/application (326.3ms)
+Completed 200 OK in 1996ms (Views: 1876.8ms | ActiveRecord: 86.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b/nada1.png" for 127.0.0.1 at 2019-05-05 14:20:06 +0200
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f/back.png" for 127.0.0.1 at 2019-05-05 14:20:06 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b", "filename"=>"nada1"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f", "filename"=>"back"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: CuCWBHtFCzpX5zxp7ZDHhn1w (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c2e1c84cf7f6b1306d775b32639cef07f98df508/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png)[0m
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: NFBs8oc9S4qDio9bb41k24wL (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b189394902011429b736f98f000927c96b452980/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c2e1c84cf7f6b1306d775b32639cef07f98df508/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b189394902011429b736f98f000927c96b452980/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c2e1c84cf7f6b1306d775b32639cef07f98df508/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png" for 127.0.0.1 at 2019-05-05 14:20:06 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b189394902011429b736f98f000927c96b452980/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png" for 127.0.0.1 at 2019-05-05 14:20:06 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"back.png\"; filename*=UTF-8''back.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b189394902011429b736f98f000927c96b452980", "filename"=>"back"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"nada1.png\"; filename*=UTF-8''nada1.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjA2LjkwNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c2e1c84cf7f6b1306d775b32639cef07f98df508", "filename"=>"nada1"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/doha/Documents/Ruby/Ecommerce-Rails/storage/Cu/CW/CuCWBHtFCzpX5zxp7ZDHhn1w):
+  
+rack (2.0.7) lib/rack/file.rb:63:in `mtime'
+rack (2.0.7) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b/nada1.png" for 127.0.0.1 at 2019-05-05 14:20:11 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b", "filename"=>"nada1"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: CuCWBHtFCzpX5zxp7ZDHhn1w (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png" for 127.0.0.1 at 2019-05-05 14:20:11 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"nada1.png\"; filename*=UTF-8''nada1.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656", "filename"=>"nada1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/doha/Documents/Ruby/Ecommerce-Rails/storage/Cu/CW/CuCWBHtFCzpX5zxp7ZDHhn1w):
+  
+rack (2.0.7) lib/rack/file.rb:63:in `mtime'
+rack (2.0.7) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for 127.0.0.1 at 2019-05-05 14:20:17 +0200
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-05 14:20:17 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (132.9ms)
+Completed 200 OK in 424ms (Views: 391.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png" for 127.0.0.1 at 2019-05-05 14:20:18 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"nada1.png\"; filename*=UTF-8''nada1.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656", "filename"=>"nada1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/doha/Documents/Ruby/Ecommerce-Rails/storage/Cu/CW/CuCWBHtFCzpX5zxp7ZDHhn1w):
+  
+rack (2.0.7) lib/rack/file.rb:63:in `mtime'
+rack (2.0.7) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-05 14:20:24 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HQH3s+bmgbs1Y6ko6xk+ngYErLQA9rC+0y3diQBvKACUF4gH5UjUAoUj9t2D53+j2PebDWSW555TvE7pHlvu9Q==", "user"=>{"email"=>"doha@doha.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'doha@doha.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 325ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2019-05-05 14:20:25 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:22
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:34
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:34
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:34
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:34
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:30
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:34
+  Rendered orders/index.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 256ms (Views: 214.0ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f/back.png" for 127.0.0.1 at 2019-05-05 14:20:25 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f", "filename"=>"back"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: NFBs8oc9S4qDio9bb41k24wL (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjI1LjU3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--af664cd55188241334dc08776e15d11c3d1bfe32/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjI1LjU3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--af664cd55188241334dc08776e15d11c3d1bfe32/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png" for 127.0.0.1 at 2019-05-05 14:20:25 +0200
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"nada1.png\"; filename*=UTF-8''nada1.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjExLjEzMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9d4f39b45684f701d37d1528d5d217c991242656", "filename"=>"nada1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/doha/Documents/Ruby/Ecommerce-Rails/storage/Cu/CW/CuCWBHtFCzpX5zxp7ZDHhn1w):
+  
+rack (2.0.7) lib/rack/file.rb:63:in `mtime'
+rack (2.0.7) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjI1LjU3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--af664cd55188241334dc08776e15d11c3d1bfe32/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png" for 127.0.0.1 at 2019-05-05 14:20:25 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"back.png\"; filename*=UTF-8''back.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI1OjI1LjU3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--af664cd55188241334dc08776e15d11c3d1bfe32", "filename"=>"back"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2019-05-05 14:22:29 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  Rendered orders/index.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 198ms (Views: 190.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b/nada1.png" for 127.0.0.1 at 2019-05-05 14:22:30 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7db09ad0c1e3cc66097df6e9ec1124a77a8321b", "filename"=>"nada1"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.1ms) [0m[34mGenerated URL for file at key: CuCWBHtFCzpX5zxp7ZDHhn1w (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29592837acef69110e01a378a08dc457f5656ed7/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29592837acef69110e01a378a08dc457f5656ed7/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f/back.png" for 127.0.0.1 at 2019-05-05 14:22:30 +0200
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--54d425f5a08302c709e2c19176a2078d0363a26f", "filename"=>"back"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: NFBs8oc9S4qDio9bb41k24wL (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29592837acef69110e01a378a08dc457f5656ed7/nada1.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22nada1.png%22%3B+filename%2A%3DUTF-8%27%27nada1.png" for 127.0.0.1 at 2019-05-05 14:22:30 +0200
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png" for 127.0.0.1 at 2019-05-05 14:22:30 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"nada1.png\"; filename*=UTF-8''nada1.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRRM1ZEVjBKSWRFWkRlbkJZTlhwNGNEZGFSRWhvYmpGM0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlibUZrWVRFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR1WVdSaE1TNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlUiLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjI0N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--29592837acef69110e01a378a08dc457f5656ed7", "filename"=>"nada1"}
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"back.png\"; filename*=UTF-8''back.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9", "filename"=>"back"}
+  
+Errno::ENOENT (No such file or directory @ rb_file_s_mtime - /home/doha/Documents/Ruby/Ecommerce-Rails/storage/Cu/CW/CuCWBHtFCzpX5zxp7ZDHhn1w):
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+rack (2.0.7) lib/rack/file.rb:63:in `mtime'
+rack (2.0.7) lib/rack/file.rb:63:in `serving'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:42:in `serve_file'
+activestorage (5.2.3) app/controllers/active_storage/disk_controller.rb:12:in `show'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/orders/34" for 127.0.0.1 at 2019-05-05 14:22:45 +0200
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DfFn3LQ6hPwV4DYhQ5HDIuMSrvzEd9LsQ2yIlRrUkbeTKqJr4Lxa3+UcJJ68zk3sJPRpRmISX/IpHR1CBluOLA==", "id"=>"34"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 34 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:84
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:73
+  [1m[36mOrder Destroy (0.6ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 34[0m
+  ↳ app/controllers/orders_controller.rb:73
+  [1m[35m (57.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:73
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 68ms (ActiveRecord: 59.6ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2019-05-05 14:22:45 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  Rendered orders/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 221ms (Views: 215.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png" for 127.0.0.1 at 2019-05-05 14:22:46 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"back.png\"; filename*=UTF-8''back.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9", "filename"=>"back"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/orders/33" for 127.0.0.1 at 2019-05-05 14:23:43 +0200
+Processing by OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xEY2iTO0u//PY8jZG0gyu2QUDJvv8EK5N5d3gxmtC4tanfM+ZzJl3D+f2mbkF7x1o/LLIUmVz6dd5uJUBSIUEA==", "id"=>"33"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 33 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:84
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:73
+  [1m[36mOrder Destroy (0.2ms)[0m  [1m[31mDELETE FROM `orders` WHERE `orders`.`id` = 33[0m
+  ↳ app/controllers/orders_controller.rb:73
+  [1m[35m (101.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:73
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 106ms (ActiveRecord: 102.3ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2019-05-05 14:23:43 +0200
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /home/doha/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2[0m
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mBrand Load (0.6ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:25
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:26
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:27
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:28
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  `brands`.* FROM `brands` WHERE `brands`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:29
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Product' AND `active_storage_attachments`.`name` = 'images'[0m
+  ↳ app/views/orders/index.html.erb:31
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:32
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:35
+  Rendered orders/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 204ms (Views: 198.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9/back.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22back.png%22%3B+filename%2A%3DUTF-8%27%27back.png" for 127.0.0.1 at 2019-05-05 14:23:44 +0200
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"back.png\"; filename*=UTF-8''back.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUa1pDY3podll6bFROSEZFYVc4NVltSTBNV3N5TkhkTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbUZqYXk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoWTJzdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDE5LTA1LTA1VDEyOjI3OjMwLjMxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e2a6df1f163bbe235a094330879c801fe3eda7f9", "filename"=>"back"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+

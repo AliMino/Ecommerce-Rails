@@ -12,6 +12,7 @@
       <th>Category</th>
       <th>Brand</th>
       <th>Images</th>
+      <th>Delete</th>
       <th></th>
       
     </tr>
@@ -34,6 +35,8 @@
           <% if Product.find(order.product_id).quantity > 0%>
         <td><%= link_to 'Checkout', order_path(order),:method => :put %></td>
           <%end%>
+         
+       <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
