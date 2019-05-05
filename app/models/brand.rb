@@ -7,4 +7,13 @@ class Brand < ApplicationRecord
         brand_name = brand_name.capitalize
         Brand.where(:name => brand_name).limit(1)[0]
     end
+
+    def self.get_brands_names
+        names = []
+        Brand.all.each do |brand|
+            names.append brand.name
+        end
+        names
+    end
+
 end
