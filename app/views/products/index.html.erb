@@ -1,7 +1,20 @@
 <%= current_user.inspect %>
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>All Products</h1>
+
+<%= form_tag products_path, :method => 'get' do %>
+  <strong>
+    Search by title or description (leave it blank to get all products) or 
+    <%= link_to "Filter products" %>:
+  </strong>
+  <div class="search-bar">
+    <%= text_field_tag :search, params[:search] %>
+  </div>
+  <br>
+  
+  <br><br>
+<% end %>
 
 <table>
   <thead>
