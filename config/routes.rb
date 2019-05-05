@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :brands
   resources :product_images
   resources :products
+  resources :products_searches
   resources :used_copons
   resources :copons
   resources :wish_lists
