@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   root to: "products#index"
   resources :expiration_usages
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   resources :brands
   resources :product_images
   resources :products
+  resources :products_searches
   resources :used_copons
   resources :copons
   resources :wish_lists

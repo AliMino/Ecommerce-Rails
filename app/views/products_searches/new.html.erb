@@ -1,0 +1,75 @@
+
+<h1> Products Filter </h1>
+
+<% if ProductsSearch.get_searches_by_user_id(current_user.id).length > 0 %>
+    <strong> Search history </strong>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Seller</th>
+                <th>Min price</th>
+                <th>Max price</th>
+                <th>Redo</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% ProductsSearch.get_searches_by_user_id(current_user.id).each do |s| %>
+                <tr>
+                    <th><%= s.brand %></th>
+                    <th><%= s.category %></th>
+                    <th><%= s.seller %></th>
+                    <th><%= s.min_price %></th>
+                    <th><%= s.max_price %></th>
+                    <th><%= link_to "redo", products_search_path(s.id) %></th>
+                    <th><%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% else %>
+    <strong>
+        Welcome to our Products Filter
+    </strong>
+<% end %>
+
+<br><br>
+
+<strong>Specify your filter here</strong>
+<br>
+<%= form_for @search do |f| %>
+
+    <div class="field">
+        <%= f.label :brand %>
+        <%= f.select :brand, options_for_select(@brands), :include_blank => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :category %>
+        <%= f.select :category, options_for_select(@categories), :include_blank => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :seller %>
+        <%= f.select :seller, options_for_select(@sellers), :include_blank => true %>
+    </div>
+
+    <div class="field">
+        <%= f.label :min_price %>
+        <%= f.text_field :min_price %>
+    </div>
+
+    <div class="field">
+        <%= f.label :max_price %>
+        <%= f.text_field :max_price %>
+    </div>
+
+    <div>
+        <%= f.submit "Filter products" %>
+    </div>
+
+<% end %>
+

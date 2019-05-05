@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 5 }
   validate :validate_avatar
 
+  has_one :store
   has_one_attached :avatar
   enum role: { admin: 2, seller: 1, buyer: 0 }
 
@@ -32,6 +33,20 @@ class User < ApplicationRecord
       end
     end
     sellers
+  end
+
+  def self.get_sellers_names
+    names = []
+    User.all.each do |user|
+      if user.role == "seller"
+        names.append user.name
+      end
+    end
+    names
+  end
+
+  def self.get_seller_by_name(seller_name)
+    User.where("name = ?", seller_name).limit(1).first
   end
 
   private
