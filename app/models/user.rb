@@ -44,6 +44,10 @@ class User < ApplicationRecord
     names
   end
 
+  def self.get_seller_by_name(seller_name)
+    User.where("name = ?", seller_name).limit(1).first
+  end
+
   private
 
     def validate_avatar
