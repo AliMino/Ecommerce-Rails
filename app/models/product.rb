@@ -8,9 +8,22 @@ class Product < ApplicationRecord
     validates :description, :presence => true, length: { minimum: 10 }
     validates :quantity, :presence => true
     validate :seller_existance
+    validate :images_types
 
     def self.get_all_products
         Product.all
+    end
+
+    def self.get_products_count
+        Product.all.length
+    end
+
+    def self.search(criteria)
+        if criteria
+            where("title LIKE ? or description LIKE ?", "%#{criteria}%", "%#{criteria}%")
+        else
+            all
+        end
     end
 
     private
