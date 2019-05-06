@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    
+
+ 
+  
     <% if current_user %>
     <%= link_to_unless_current "Home", root_path, method: :get, :class => 'navbar-link'  %>
     <br>
@@ -19,6 +21,15 @@
     <%= link_to_unless_current "Edit profile", edit_user_registration_path, method: :get, :class => 'navbar-link'  %>
     <br>
     <% end %>
+    <%if current_user==nil%>
+     <nav>
+<form action="/users/sign_in">
+ <button type="button" class="btn btn-primary" type="submit">Signup</button>
+  <button type="button" class="btn btn-primary">Login</button>
+</form >
+ </nav>
+        
+    <%end%>
     <%= yield %>
   </body>
 </html>

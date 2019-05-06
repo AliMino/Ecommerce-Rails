@@ -71,3 +71,7 @@ gem 'chartjs-ror', '~> 3.6', '>= 3.6.4'
 
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.2'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'
