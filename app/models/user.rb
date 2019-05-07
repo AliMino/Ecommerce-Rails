@@ -45,6 +45,20 @@ class User < ApplicationRecord
     sellers
   end
 
+  def self.get_sellers_names
+    names = []
+    User.all.each do |user|
+      if user.role == "seller"
+        names.append user.name
+      end
+    end
+    names
+  end
+
+  def self.get_seller_by_name(seller_name)
+    User.where("name = ?", seller_name).limit(1).first
+  end
+
   private
 
     def validate_avatar

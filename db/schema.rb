@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_133822) do
+ActiveRecord::Schema.define(version: 2019_05_07_080451) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "namespace"
@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
     t.integer "expiration_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "associative"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_copons_on_product_id"
   end
 
   create_table "expiration_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -101,11 +104,6 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.float "price"
     t.integer "quantity"
@@ -119,6 +117,17 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "products_searches", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.float "min_price"
+    t.float "max_price"
+    t.string "category"
+    t.string "brand"
+    t.string "seller"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -152,6 +161,10 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   create_table "used_copons", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "copon_id"
+    t.index ["copon_id"], name: "index_used_copons_on_copon_id"
+    t.index ["user_id"], name: "index_used_copons_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -176,9 +189,15 @@ ActiveRecord::Schema.define(version: 2019_05_04_133822) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
+<<<<<<< HEAD
+=======
+  add_foreign_key "copons", "products"
+>>>>>>> dev
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "shopping_carts", "users"
   add_foreign_key "stores", "users"
+  add_foreign_key "used_copons", "copons"
+  add_foreign_key "used_copons", "users"
 end

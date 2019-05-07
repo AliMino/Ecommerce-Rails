@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -71,3 +71,7 @@ gem 'chartjs-ror', '~> 3.6', '>= 3.6.4'
 
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.2'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'

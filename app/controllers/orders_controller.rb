@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
    
 
@@ -76,6 +77,7 @@ class OrdersController < ApplicationController
     end
     redirect_back(fallback_location: root_path)
     @order.save
+
   end
 
   # DELETE /orders/1
@@ -102,4 +104,18 @@ class OrdersController < ApplicationController
     def order_params
       params.fetch(:order, {})
     end
+    
+
+    
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to new_user_session_path, notice: "Please Login to view that page!"
+      end
+    end
+
+
+
+
 end

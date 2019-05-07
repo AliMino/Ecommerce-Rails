@@ -25,14 +25,12 @@ class UsedCoponsController < ApplicationController
   # POST /used_copons.json
   def create
     @used_copon = UsedCopon.new(used_copon_params)
+    @used_copon.user = current_user
+    @used_copon.copon = Copon.get_by_id(params[:copon_id])
 
     respond_to do |format|
       if @used_copon.save
-        format.html { redirect_to @used_copon, notice: 'Used copon was successfully created.' }
-        format.json { render :show, status: :created, location: @used_copon }
-      else
-        format.html { render :new }
-        format.json { render json: @used_copon.errors, status: :unprocessable_entity }
+        format.html { redirect_to products_path, notice: 'Copon was used successfully.' }
       end
     end
   end
@@ -69,6 +67,7 @@ class UsedCoponsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def used_copon_params
+      puts "-- " + params.inspect
       params.fetch(:used_copon, {})
     end
 end
