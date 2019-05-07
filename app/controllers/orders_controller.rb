@@ -9,6 +9,11 @@ class OrdersController < ApplicationController
     @orders = Order.where(user_id: current_user.id).all
   end
 
+  def get_seller_orders
+   @sellerOrders = (Order.where(:product_id => Product.where(:user_id => current_user.id)))
+
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -54,17 +59,24 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    # respond_to do |format|
-    #   if @order.update(order_params)
-    #     format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @order }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @order.errors, status: :unprocessable_entity }
-    #   end
-    # end
-   @order.state=1
-   @order.save
+
+    if (current_user.role == "buyer")
+      @order.state=1
+    end
+    if (current_user.role == "seller")
+      if (@order.state == "confirmed")
+        @order.state=3
+        
+      end
+      if (@order.state == "pending")
+        @order.state=2
+        @product=@order.product
+        @product.quantity-=1
+        @product.save
+      end
+    end
+    redirect_back(fallback_location: root_path)
+    @order.save
 
   end
 
@@ -78,6 +90,9 @@ class OrdersController < ApplicationController
     end
   end
   
+  def getSellerOrders
+    @sellerOrders = Order.product_id
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
