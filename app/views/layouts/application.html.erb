@@ -14,12 +14,13 @@
  
   
     <% if current_user %>
-    <%= link_to_unless_current "Home", root_path, method: :get, :class => 'navbar-link'  %>
-    <br>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <br>
-    <%= link_to_unless_current "Edit profile", edit_user_registration_path, method: :get, :class => 'navbar-link'  %>
-    <br>
+      <div>
+        <%= link_to_unless_current current_user.name, edit_user_registration_path, method: :get, :class => 'navbar-link'  %>
+        <p> <%= current_user.role %> </p>
+        <%= image_tag current_user.avatar, width: '80px', height: '80px', class: 'rounded' %>
+      </div> <br>
+      <%= link_to_unless_current "Home", root_path, method: :get, :class => 'navbar-link'  %> <br>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <br>
     <% end %>
     <%if current_user==nil%>
      <nav>

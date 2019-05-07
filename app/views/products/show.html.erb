@@ -44,6 +44,17 @@
   <%= @product.description %>
 </p>
 
+<% if @product.copon && !@product.copon.is_expired %>
+  <p>  
+    <strong>Copon:</strong>
+    <%= @product.copon.discount %>
+    <%= @product.copon.get_symbol %>
+    <% if @product.copon.is_available_for(current_user) %>
+      <button name="use_copon_btn" id="<%= @product.copon.id %>">use this copon </button>
+    <% end %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 
