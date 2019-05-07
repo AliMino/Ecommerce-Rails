@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_214224) do
+ActiveRecord::Schema.define(version: 2019_05_07_060606) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "namespace"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_05_05_214224) do
     t.integer "expiration_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "associative"
   end
 
   create_table "expiration_dates", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -97,11 +98,6 @@ ActiveRecord::Schema.define(version: 2019_05_05_214224) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
