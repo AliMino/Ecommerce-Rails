@@ -12,18 +12,48 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :product %>
+    <%= form.select(:product) do %>      
+      <% products_array = Product.get_products_with_no_copons(copon.product).collect { |p| [p.title + " - " + p.category.name + " by " + p.brand.name, p.id] } %>
+      <% if copon.product %>
+        <%= options_for_select(products_array, :selected => copon.product.id) %>
+      <% else %>
+        <%= options_for_select(products_array) %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div class="field">
     <%= form.label :has_fixed_amount %>
     <%= form.check_box :has_fixed_amount %>
   </div>
 
   <div class="field">
     <%= form.label :discount %>
-    <%= form.number_field :discount %>
+    <%= form.number_field :discount, :min => 1 %>
   </div>
 
   <div class="field">
     <%= form.label :expiration_type %>
-    <%= form.number_field :expiration_type %>
+    <%= form.select(:expiration_type) do %>
+      <%= options_for_select([['By Usage', "usage"], ['By date', "date"]], :id => 'hi') %>
+    <% end %>
+  </div>
+
+  <div class="field" id="dates" hidden>
+    <%= form.label :expiration_date %>
+    <%= form.select(:expiration_date) do %>
+      <% dates_array = ExpirationDate.get_all_dates.collect { |d| [d.date, d.id] } %>
+      <%= options_for_select(dates_array) %>
+    <% end %>
+  </div>
+
+  <div class="field" id="usages">
+    <%= form.label :expiration_usage %>
+    <%= form.select(:expiration_usage) do %>
+      <% usages_array = ExpirationUsage.get_all_usages.collect { |u| [u.usage, u.id] } %>
+      <%= options_for_select(usages_array) %>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -5,9 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Has fixed amount</th>
+      <th>Product</th>
       <th>Discount</th>
       <th>Expiration type</th>
+      <th>Expirs on</th>
+      <th>Usage count</th>
+      <th>Is Expired</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +18,28 @@
   <tbody>
     <% @copons.each do |copon| %>
       <tr>
-        <td><%= copon.has_fixed_amount %></td>
-        <td><%= copon.discount %></td>
+        <td>
+            <%= copon.product.title %>
+            <br>
+            <%= image_tag copon.product.images[0], width: '50px', height: '50px' %>
+            <br>
+            <%= copon.product.category.name %> <%= " by " %>
+            <%= copon.product.brand.name %>
+        </td>
+        <td>
+          <%= copon.discount %>
+          <%= copon.get_symbol %>
+        </td>
         <td><%= copon.expiration_type %></td>
+        <td>
+          <% if copon.expiration_type == "usage" %>
+            <%= copon.get_expiration %> <%= "usages" %>
+          <% else %>
+            <%= copon.get_expiration %>
+          <% end %>
+        </td>
+        <td><%= copon.get_usage.length %></td>
+        <td><%= copon.is_expired %></td>
         <td><%= link_to 'Show', copon %></td>
         <td><%= link_to 'Edit', edit_copon_path(copon) %></td>
         <td><%= link_to 'Destroy', copon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
