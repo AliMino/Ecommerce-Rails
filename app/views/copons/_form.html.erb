@@ -23,7 +23,25 @@
 
   <div class="field">
     <%= form.label :expiration_type %>
-    <%= form.number_field :expiration_type %>
+    <%= form.select(:expiration_type) do %>
+      <%= options_for_select([['By Usage', "usage"], ['By date', "date"]], :id => 'hi') %>
+    <% end %>
+  </div>
+
+  <div class="field" id="dates" hidden>
+    <%= form.label :expiration_date %>
+    <%= form.select(:expiration_date) do %>
+      <% dates_array = ExpirationDate.get_all_dates.collect { |d| [d.date, d.id] } %>
+      <%= options_for_select(dates_array) %>
+    <% end %>
+  </div>
+
+  <div class="field" id="usages">
+    <%= form.label :expiration_usage %>
+    <%= form.select(:expiration_usage) do %>
+      <% usages_array = ExpirationUsage.get_all_usages.collect { |u| [u.usage, u.id] } %>
+      <%= options_for_select(usages_array) %>
+    <% end %>
   </div>
 
   <div class="actions">
