@@ -1,10 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+   
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where(user_id: current_user.id).all
   end
 
   # GET /orders/1
@@ -19,36 +21,51 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @orders = Order.all
   end
 
   # POST /orders
   # POST /orders.json
-  def create
-    @order = Order.new(order_params)
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+  def showCart
+
+  end  
+
+  def create
+    # params[:format].inspect
+    @order = Order.new()
+    @order.state= 0
+    @order.user_id=current_user.id
+    @order.product_id=params[:format]
+ 
+    @order.save
+
+    # respond_to do |format|
+    #   if @order.save
+    #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
+    #     format.json { render :show, status: :created, location: @order }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @order.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @order.update(order_params)
+    #     format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @order }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @order.errors, status: :unprocessable_entity }
+    #   end
+    # end
+   @order.state=1
+   @order.save
+
   end
 
   # DELETE /orders/1
@@ -60,6 +77,7 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,4 +89,18 @@ class OrdersController < ApplicationController
     def order_params
       params.fetch(:order, {})
     end
+    
+
+    
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to new_user_session_path, notice: "Please Login to view that page!"
+      end
+    end
+
+
+
+
 end

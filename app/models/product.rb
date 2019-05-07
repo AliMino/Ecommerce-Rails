@@ -3,12 +3,14 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :user    # seller
     has_many_attached :images
+    has_many :orders
     has_one :copon
 
     validates :title, :presence => true, length: { minimum: 5 }
     validates :description, :presence => true, length: { minimum: 10 }
     validates :quantity, :presence => true
     validate :seller_existance
+   
     validate :images_types
 
     def self.get_all_products
@@ -66,4 +68,5 @@ class Product < ApplicationRecord
                 errors.add(:images, "are missing")
             end
         end
+        
 end

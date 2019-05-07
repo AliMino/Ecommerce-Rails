@@ -4,17 +4,39 @@
 
 <table>
   <thead>
+    <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Price</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Brand</th>
+      <th>Images</th>
+      <th>Delete</th>
+      <th></th>
+      
     </tr>
+  </thead>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Product.find(order.product_id).price %></td>
+        <td><%= Product.find(order.product_id).title %></td>
+        <td><%= Product.find(order.product_id).description %></td>
+        <td><%= Product.find(order.product_id).category.name %></td>
+        <td><%= Product.find(order.product_id).brand.name %></td>
+      <td> <div>
+            <% Product.find(order.product_id).images.each do |image| %>
+              <%= image_tag image, width: '80px', height: '80px' %>
+            <% end %>
+          </div></td>
+          <% if Product.find(order.product_id).quantity > 0%>
+        <td><%= link_to 'Checkout', order_path(order),:method => :put %></td>
+          <%end%>
+         
+       <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

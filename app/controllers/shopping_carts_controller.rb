@@ -1,8 +1,12 @@
 class ShoppingCartsController < ApplicationController
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
-
+  helper_method :createOrder
+  
   # GET /shopping_carts
   # GET /shopping_carts.json
+
+   
+  
   def index
     @shopping_carts = ShoppingCart.all
   end
@@ -13,8 +17,9 @@ class ShoppingCartsController < ApplicationController
   end
 
   # GET /shopping_carts/new
-  def new
+  def self.new
     @shopping_cart = ShoppingCart.new
+   
   end
 
   # GET /shopping_carts/1/edit
@@ -23,9 +28,14 @@ class ShoppingCartsController < ApplicationController
 
   # POST /shopping_carts
   # POST /shopping_carts.json
-  def create
-    @shopping_cart = ShoppingCart.new(shopping_cart_params)
+  def self.create
+    @shopping_cart = ShoppingCart.new()
+    @shopping_cart.user = User.last
 
+    
+    @shopping_cart.save
+   # shopping_cart_associatives(@shopping_cart)
+  
     respond_to do |format|
       if @shopping_cart.save
         format.html { redirect_to @shopping_cart, notice: 'Shopping cart was successfully created.' }
@@ -36,6 +46,9 @@ class ShoppingCartsController < ApplicationController
       end
     end
   end
+  def self.createOrder
+    OrdersController.create
+  end  
 
   # PATCH/PUT /shopping_carts/1
   # PATCH/PUT /shopping_carts/1.json
@@ -69,6 +82,7 @@ class ShoppingCartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shopping_cart_params
-      params.fetch(:shopping_cart, {})
+      params.require(:shopping_cart).permit(:user.id)
     end
+   
 end
