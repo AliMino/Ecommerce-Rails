@@ -3,6 +3,7 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :user    # seller
     has_many_attached :images
+    has_one :copon
 
     validates :title, :presence => true, length: { minimum: 5 }
     validates :description, :presence => true, length: { minimum: 10 }
@@ -18,12 +19,33 @@ class Product < ApplicationRecord
         Product.all.length
     end
 
+    def self.get_by_id(id)
+        Product.find(id)
+    end
+
     def self.search(criteria)
         if criteria
             where("title LIKE ? or description LIKE ?", "%#{criteria}%", "%#{criteria}%")
         else
             all
         end
+    end
+
+    def self.get_products_with_no_copons(except)
+        products = []
+        Product.all.each do |p|
+            if p.copon && p.copon.is_expired
+                p.copon = nil
+            end
+            if p.copon
+                if except && p.id == except.id
+                    products.append(p)
+                end
+            else
+                products.append(p)
+            end
+        end
+        products
     end
 
     private

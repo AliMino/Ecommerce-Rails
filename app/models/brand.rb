@@ -1,7 +1,7 @@
 class Brand < ApplicationRecord
     validates :name, :presence => true, :uniqueness => true
-    # has_many :products, dependent: :destroy
-    has_many :products
+    before_create :brand_name
+    has_many :products, dependent: :destroy
 
     def self.get_by_name(brand_name)
         brand_name = brand_name.capitalize
@@ -15,5 +15,10 @@ class Brand < ApplicationRecord
         end
         names
     end
+
+    private
+        def brand_name
+            self.name = self.name.upcase
+        end
 
 end
