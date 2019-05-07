@@ -2,8 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-    dates = $('#dates')
-    dates.hide()
     criteria = $('#copon_expiration_type').change ->
         if($('#copon_expiration_type :selected').text() == 'By Usage')
             dates = $('#dates')

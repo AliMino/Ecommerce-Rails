@@ -25,6 +25,7 @@ class CoponsController < ApplicationController
   # POST /copons.json
   def create
     @copon = Copon.new(copon_params)
+    set_associative_criteria @copon, params.require(:copon)
 
     respond_to do |format|
       if @copon.save
@@ -40,6 +41,7 @@ class CoponsController < ApplicationController
   # PATCH/PUT /copons/1
   # PATCH/PUT /copons/1.json
   def update
+    set_associative_criteria @copon, params.require(:copon)
     respond_to do |format|
       if @copon.update(copon_params)
         format.html { redirect_to @copon, notice: 'Copon was successfully updated.' }
@@ -71,4 +73,13 @@ class CoponsController < ApplicationController
     def copon_params
       params.require(:copon).permit(:has_fixed_amount, :discount, :expiration_type)
     end
+
+    def set_associative_criteria(copon, params)
+      if params[:expiration_type] == "usage"
+        copon.associative = params[:expiration_usage]
+      else
+        copon.associative = params[:expiration_date]
+      end
+    end
+
 end
