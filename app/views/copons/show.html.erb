@@ -9,11 +9,26 @@
 <p>
   <strong>Discount:</strong>
   <%= @copon.discount %>
+  <%= @copon.get_symbol %>
 </p>
 
 <p>
   <strong>Expiration type:</strong>
+  <%= "By" %>
   <%= @copon.expiration_type %>
+</p>
+
+<p>
+  <strong>Expiration Criteria:</strong>
+  <%= @copon.get_expiration %>
+  <% if @copon.expiration_type == "usage" %>
+    <%= "usages" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Is Expired:</strong>
+  <%= @copon.is_expired %>
 </p>
 
 <%= link_to 'Edit', edit_copon_path(@copon) %> |
