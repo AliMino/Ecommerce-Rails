@@ -10,6 +10,9 @@ class Product < ApplicationRecord
     validates :description, :presence => true, length: { minimum: 10 }
     validates :quantity, :presence => true
     validate :seller_existance
+     
+    
+   
     validate :images_types
 
     def self.get_all_products

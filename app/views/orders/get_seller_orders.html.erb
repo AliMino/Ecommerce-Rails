@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <thead>
+    <tr>
+      <th>Price</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Brand</th>
+      <th>Images</th>
+      <th>State</th>
+      <th>Action</th>
+      
+    </tr>
+  </thead>
+  </thead>
+
+  <tbody>
+    <% @sellerOrders.each do |order| %>
+        <% if order.state == "pending" or order.state == "confirmed" %>
+            <tr>
+                <td><%= Product.find(order.product_id).price %></td>
+                <td><%= Product.find(order.product_id).title %></td>
+                <td><%= Product.find(order.product_id).description %></td>
+                <td><%= Product.find(order.product_id).category.name %></td>
+                <td><%= Product.find(order.product_id).brand.name %></td>
+                <td>
+                <div>
+                    <% Product.find(order.product_id).images.each do |image| %>
+                    <%= image_tag image, width: '80px', height: '80px' %>
+                    <% end %>
+                </div>
+                </td>
+
+                <% if Product.find(order.product_id).quantity > 0 and order.state == "pending" %>
+                    <td><%= order.state %></td>
+                    <td><%= link_to 'Confirm' , order_path(order),:method => :put %></td>
+
+                <% elsif order.state == "confirmed" %>
+                    <td><%= order.state %></td>
+                    <td><%= link_to 'Delivere' , order_path(order),:method => :put %></td>
+                <% else %>
+                    <td>Out of stock</td>
+                <%end%>
+                
+            </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br>

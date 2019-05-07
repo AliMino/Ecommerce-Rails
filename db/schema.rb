@@ -190,6 +190,9 @@ ActiveRecord::Schema.define(version: 2019_05_07_080451) do
   add_foreign_key "copons", "products"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
+
+  add_foreign_key "copons", "products"
+
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
