@@ -2,6 +2,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Product:</strong>
+  <%= @copon.product.title %>
+  <br>
+  <% @copon.product.images.each do |image| %>
+    <%= image_tag image, width: '80px', height: '80px' %>
+  <% end %>
+  <br>
+  <%= @copon.product.category.name %> <%= " by " %>
+  <%= @copon.product.brand.name %>
+</p>
+
+<p>
   <strong>Has fixed amount:</strong>
   <%= @copon.has_fixed_amount %>
 </p>

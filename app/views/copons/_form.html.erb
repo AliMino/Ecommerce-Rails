@@ -12,6 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :product %>
+    <%= form.select(:product) do %>      
+      <% products_array = Product.get_products_with_no_copons(copon.product).collect { |p| [p.title + " - " + p.category.name + " by " + p.brand.name, p.id] } %>
+      <% if copon.product %>
+        <%= options_for_select(products_array, :selected => copon.product.id) %>
+      <% else %>
+        <%= options_for_select(products_array) %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div class="field">
     <%= form.label :has_fixed_amount %>
     <%= form.check_box :has_fixed_amount %>
   </div>
