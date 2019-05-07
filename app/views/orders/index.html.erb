@@ -12,8 +12,8 @@
       <th>Category</th>
       <th>Brand</th>
       <th>Images</th>
+      <th>Order</th>
       <th>Delete</th>
-      <th></th>
       
     </tr>
   </thead>
@@ -27,21 +27,28 @@
         <td><%= Product.find(order.product_id).description %></td>
         <td><%= Product.find(order.product_id).category.name %></td>
         <td><%= Product.find(order.product_id).brand.name %></td>
-      <td> <div>
+        <td>
+          <div>
             <% Product.find(order.product_id).images.each do |image| %>
               <%= image_tag image, width: '80px', height: '80px' %>
             <% end %>
-          </div></td>
-          <% if Product.find(order.product_id).quantity > 0%>
-        <td><%= link_to 'Checkout', order_path(order),:method => :put %></td>
-          <%end%>
+          </div>
+        </td>
+
+        <% if Product.find(order.product_id).quantity > 0 %>
+          <td><%= link_to_if order.state == "added" , 'order', order_path(order),:method => :put  do
+              order.state
+          end
+        %></td>
+        <% else %>
+          <td>Out of stock</td>
+        <%end%>
          
-       <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Order', new_order_path %>

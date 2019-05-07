@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
        user ||= User.new # guest user (not logged in)
       if user.seller?
-        can :create, Product
+        can :create, Product 
         can :edit, Product
         can :destroy, Product
       end

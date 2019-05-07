@@ -187,9 +187,9 @@ ActiveRecord::Schema.define(version: 2019_05_07_080451) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "copons", "products"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "copons", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"

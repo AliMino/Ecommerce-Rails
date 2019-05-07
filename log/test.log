@@ -1,0 +1,66 @@
+  [1m[35m (143.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (60.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM `order_states`;
+DELETE FROM `products`;
+DELETE FROM `product_images`;
+DELETE FROM `stores`;
+DELETE FROM `shopping_carts`;
+DELETE FROM `wish_lists`;
+DELETE FROM `admin_users`;
+DELETE FROM `orders`;
+DELETE FROM `users`;
+DELETE FROM `products_searches`;
+DELETE FROM `copons`;
+DELETE FROM `ratings`;
+DELETE FROM `expiration_dates`;
+DELETE FROM `used_copons`;
+DELETE FROM `categories`;
+DELETE FROM `expiration_usages`;
+DELETE FROM `reviews`;
+DELETE FROM `brands`;
+INSERT INTO `order_states` (`id`) VALUES (DEFAULT), (DEFAULT);
+INSERT INTO `products` (`id`, `price`, `quantity`, `title`, `description`, `created_at`, `updated_at`, `brand_id`, `category_id`, `user_id`) VALUES (980190962, 1.5, 1, 'MyString', 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT, DEFAULT), (298486374, 1.5, 1, 'MyString', 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO `product_images` (`id`) VALUES (DEFAULT), (DEFAULT);
+INSERT INTO `stores` (`id`, `name`, `summary`, `created_at`, `updated_at`, `user_id`) VALUES (980190962, 'MyString', 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT), (298486374, 'MyString', 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT);
+INSERT INTO `shopping_carts` (`id`, `created_at`, `updated_at`, `user_id`) VALUES (980190962, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT), (298486374, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT);
+INSERT INTO `wish_lists` (`id`, `created_at`, `updated_at`) VALUES (980190962, '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `admin_users` (`id`, `email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `created_at`, `updated_at`) VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `orders` (`id`, `created_at`, `updated_at`, `state`, `user_id`, `product_id`) VALUES (980190962, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT, DEFAULT), (298486374, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO `users` (`id`, `email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `created_at`, `updated_at`, `name`, `role`) VALUES (980190962, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT), (298486374, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT);
+INSERT INTO `products_searches` (`id`, `min_price`, `max_price`, `category`, `brand`, `seller`, `created_at`, `updated_at`, `user_id`) VALUES (980190962, 1.5, 1.5, 'MyString', 'MyString', 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT), (298486374, 1.5, 1.5, 'MyString', 'MyString', 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT);
+INSERT INTO `copons` (`id`, `has_fixed_amount`, `discount`, `expiration_type`, `created_at`, `updated_at`, `associative`, `product_id`) VALUES (980190962, FALSE, 1, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT), (298486374, FALSE, 1, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT);
+INSERT INTO `ratings` (`id`, `rate`, `created_at`, `updated_at`) VALUES (980190962, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `expiration_dates` (`id`, `date`, `created_at`, `updated_at`) VALUES (980190962, '2019-04-28 15:16:35', '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, '2019-04-28 15:16:35', '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `used_copons` (`id`, `created_at`, `updated_at`, `user_id`, `copon_id`) VALUES (980190962, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT), (298486374, '2019-05-07 19:02:32', '2019-05-07 19:02:32', DEFAULT, DEFAULT);
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `expiration_usages` (`id`, `usage`, `created_at`, `updated_at`) VALUES (980190962, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, 1, '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `reviews` (`id`, `comment`, `created_at`, `updated_at`) VALUES (980190962, 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, 'MyText', '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (980190962, 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32'), (298486374, 'MyString', '2019-05-07 19:02:32', '2019-05-07 19:02:32');
+[0m
+  [1m[35m (31.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
