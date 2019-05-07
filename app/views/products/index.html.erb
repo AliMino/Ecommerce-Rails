@@ -4,7 +4,13 @@
 
 <h1>All Products</h1>
 <% if current_user %>
+ <% if !can? :edit, Product %>
 <%= link_to "mycart", orders_path %>
+<%end%>
+<%end%>
+
+ <% if can? :edit, Product %>
+<td><%= link_to 'Orders', seller_orders_path()%></td>
 <%end%>
 <%= form_tag products_path, :method => 'get' do %>
   <strong>
