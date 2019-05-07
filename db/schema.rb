@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_070608) do
+ActiveRecord::Schema.define(version: 2019_05_07_080451) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "namespace"
@@ -159,6 +159,10 @@ ActiveRecord::Schema.define(version: 2019_05_07_070608) do
   create_table "used_copons", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "copon_id"
+    t.index ["copon_id"], name: "index_used_copons_on_copon_id"
+    t.index ["user_id"], name: "index_used_copons_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -186,4 +190,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_070608) do
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "stores", "users"
+  add_foreign_key "used_copons", "copons"
+  add_foreign_key "used_copons", "users"
 end
