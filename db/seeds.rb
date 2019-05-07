@@ -11,6 +11,7 @@ Store.destroy_all
 Category.destroy_all
 Product.destroy_all
 Copon.destroy_all
+ShoppingCart.destroy_all
 User.destroy_all
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
@@ -25,12 +26,12 @@ category=Category.create(id: 2,name: 'mobile')
 category=Category.create(id: 3,name: 'labtop')
 category=Category.create(id: 4,name: 'Clothing')
 category=Category.create(id: 5,name: 'shoes')
+User.create!([
+    {id: 1,email: "testadmin@mvmanor.co.uk", password: "testadminuser", password_confirmation: "testadminuser", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, name: 'admin' ,role:2 },
+    {id: 2,email: "testuser@mvmanor.co.uk", password: "testuseraccount", password_confirmation: "testuseraccount", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, name: 'seller' ,role:1 },
+    {id: 3,email: "testcustomer@customer.co.uk", password: "testcustomeruser", password_confirmation: "testcustomeruser", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil,name: 'buyer' ,role:0 }
+  ])
  
 
-product=Product.create(id: 1 ,price: 30,quantity: 10,title: "product1",description: "this is the first product",brand_id: 1, category_id: 1,user_id: 1 )
+product=Product.create(id: 1 ,price: 30,quantity: 10,title: "product1",description: "this is the first product",brand_id: 1, category_id: 1,user_id: 2 )
 
-User.create!([
-    {id: 1,email: "testadmin@mvmanor.co.uk", password: "testadminuser", password_confirmation: "testadminuser", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, name: 'admin' ,role:2,avatar: "back.png" },
-    {id: 2,email: "testuser@mvmanor.co.uk", password: "testuseraccount", password_confirmation: "testuseraccount", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, name: 'seller' ,role:1 ,avatar: "back.png"},
-    {id: 3,email: "testcustomer@customer.co.uk", password: "testcustomeruser", password_confirmation: "testcustomeruser", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil,name: 'buyer' ,role:0,avatar: "back.png" }
-  ])

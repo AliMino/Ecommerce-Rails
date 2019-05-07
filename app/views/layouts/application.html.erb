@@ -24,10 +24,10 @@
     <% end %>
     <%if current_user==nil%>
      <nav>
-<form action="/users/sign_in">
- <button type="button" class="btn btn-primary" type="submit">Signup</button>
-  <button type="button" class="btn btn-primary">Login</button>
-</form >
+
+<a href='/users/sign_in'><button>Login</button></a>
+  <a href='/users/sign_up'><button>Signup</button></a>
+
  </nav>
         
     <%end%>
